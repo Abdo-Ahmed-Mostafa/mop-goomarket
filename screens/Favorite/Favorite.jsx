@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Products = () => {
+const Favorite = () => {
   return (
     <View>
-      <Text>Products</Text>
+      <Text>Favorite</Text>
     </View>
   )
 }
 
-export default Products
+export default Favorite

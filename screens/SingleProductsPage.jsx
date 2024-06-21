@@ -6,6 +6,7 @@ import { SingleProduct } from "../system_redux/Slices/ProductsSlices";
 import { ActivityIndicator, Button, MD2Colors } from "react-native-paper";
 import tw from "twrnc";
 import { AntDesign } from "@expo/vector-icons";
+import LoadingPage from "./loading_error/LoadingPage";
 const SingleProductsPage = () => {
   const {
     params: { itemsId },
@@ -22,20 +23,13 @@ const SingleProductsPage = () => {
   return (
     <View>
       {singleProdLoading ? (
-        <View style={tw`flex justify-center items-center w-full h-full`}>
-          <ActivityIndicator
-            animating={true}
-            size={"large"}
-            color={MD2Colors.red800}
-            // style={tw`my-44`}
-          />
-        </View>
+        <LoadingPage />
       ) : (
         <ScrollView>
           <View>
             <View>
               <Image
-                style={tw`w-100 h-100 bg-gray-200   `}
+                style={tw`w-full h-100 bg-gray-200   `}
                 source={{
                   uri: singleProd?.images && singleProd?.images[0],
                 }}

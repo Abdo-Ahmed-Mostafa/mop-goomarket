@@ -46,28 +46,28 @@ export const SingleProduct = createAsyncThunk(
 const productsSlices = createSlice({
   name: "getDataProducts",
   initialState: data,
-  extraReducers: (blinder) => {
-    blinder.addCase(getDataAllProducts.pending, (state, action) => {
+  extraReducers: (builder) => {
+    builder.addCase(getDataAllProducts.pending, (state, action) => {
       state.loading = true;
     });
-    blinder.addCase(getDataAllProducts.fulfilled, (state, action) => {
+    builder.addCase(getDataAllProducts.fulfilled, (state, action) => {
       state.loading = false;
       state.products = action.payload.products;
     });
-    blinder.addCase(getDataAllProducts.rejected, (state, action) => {
+    builder.addCase(getDataAllProducts.rejected, (state, action) => {
       state.loading = false;
       state.error = true;
     });
 
     /////////////////////////////
-    blinder.addCase(SingleProduct.pending, (state, action) => {
+    builder.addCase(SingleProduct.pending, (state, action) => {
       state.singleProdLoading = true;
     });
-    blinder.addCase(SingleProduct.fulfilled, (state, action) => {
+    builder.addCase(SingleProduct.fulfilled, (state, action) => {
       state.singleProd = action.payload;
       state.singleProdLoading = false;
     });
-    blinder.addCase(SingleProduct.rejected, (state, action) => {
+    builder.addCase(SingleProduct.rejected, (state, action) => {
       state.singleProdError = true;
       state.singleProdLoading = false;
     });

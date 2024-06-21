@@ -20,7 +20,6 @@ const Home = () => {
     <ScrollView>
       <View style={tw`bg-white`}>
         {/* start image */}
-
         <View style={tw`shadow-2xl shadow-black  `}>
           <View>
             <Image
@@ -62,7 +61,7 @@ const Home = () => {
                 <View style={tw`relative `}>
                   <TouchableOpacity
                     onPress={() =>
-                      navigation.navigate("SingleProductsPage", {
+                      navigation.navigate("Product 1", {
                         itemsId: data.id,
                       })
                     }
